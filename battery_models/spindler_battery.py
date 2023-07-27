@@ -1,10 +1,8 @@
-from abc import ABC
 from datetime import datetime
+from battery_models.battery import Battery
 
-from battery import Battery
 
-
-class SpindlerBattery(Battery, ABC):
+class SpindlerBattery(Battery):
     def __init__(self, last_service_date, current_date):
         super().__init__()
         self.last_service_date,= last_service_date,
@@ -12,4 +10,4 @@ class SpindlerBattery(Battery, ABC):
 
     def needs_service(self):
         service_threshold_date = self.last_service_date.replace(year=self.last_service_date.year + 2)
-        return service_threshold_date < datetime.today().date()
+        return service_threshold_date < self.current_date
