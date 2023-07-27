@@ -1,4 +1,4 @@
-from battery_models.nubbin_battery import RubbinBattery
+from battery_models.nubbin_battery import NubbinBattery
 from battery_models.spindler_battery import SpindlerBattery
 from car import Car
 from datetime import date
@@ -31,11 +31,11 @@ class CarFactory():
     @staticmethod
     def create_rorschach(self, current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int):
         willoughby_engine = WilloughbyEngine(current_mileage, last_service_mileage)
-        nubbin_battey = RubbinBattery(current_date, last_service_date)
+        nubbin_battey = NubbinBattery(current_date, last_service_date)
         return Car(willoughby_engine, nubbin_battey)
 
     @staticmethod
     def create_thovex(self, current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int):
         capulet_engine = CapuletEngine(current_mileage, last_service_mileage) 
-        nubbin_battey = RubbinBattery(current_date, last_service_date)
+        nubbin_battey = NubbinBattery(current_date, last_service_date)
         return Car(capulet_engine, nubbin_battey) 

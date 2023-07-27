@@ -3,7 +3,7 @@ from datetime import datetime
 from battery_models.battery import Battery
 
 
-class RubbinBattery(Battery):
+class NubbinBattery(Battery):
     def __init__(self, last_service_date, current_date):
         super().__init__()
         self.last_service_date,= last_service_date,
